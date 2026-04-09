@@ -49,6 +49,7 @@ model Permission {
 model PermissionRole {
   roleId       String
   permissionId String
+  rule         String?
   role         Role       @relation(fields: [roleId], references: [id])
   permission   Permission @relation(fields: [permissionId], references: [id])
   assignedAt   DateTime   @default(now())
